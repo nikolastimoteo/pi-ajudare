@@ -40,5 +40,13 @@ Route::get('campanhas/{campanha_id}/pedidos-doacao/{pedido_doacao_id}', [App\Htt
 Route::put('campanhas/{campanha_id}/pedidos-doacao/{pedido_doacao_id}', [App\Http\Controllers\PedidoDoacaoController::class, 'alterar'])->name('pedido-doacao.alterar');
 Route::delete('campanhas/{campanha_id}/pedidos-doacao/{pedido_doacao_id}', [App\Http\Controllers\PedidoDoacaoController::class, 'excluir'])->name('pedido-doacao.excluir');
 
+Route::get('pesquisar', [App\Http\Controllers\PesquisaController::class, 'index'])->name('pesquisa.index');
+Route::post('pesquisar', [App\Http\Controllers\PesquisaController::class, 'pesquisar'])->name('pesquisa.pesquisar');
+
+Route::get('aplicacoes', [App\Http\Controllers\PrestacaoServicoController::class, 'index'])->name('aplicacoes.index');
+Route::get('minhas-aplicacoes', [App\Http\Controllers\PrestacaoServicoController::class, 'index'])->name('minhas-aplicacoes.index');
+Route::post('prestacoes-servico/cadastrar', [App\Http\Controllers\PrestacaoServicoController::class, 'cadastrar'])->name('prestacao-servico.cadastrar');
+Route::put('prestacoes-servico/responder', [App\Http\Controllers\PrestacaoServicoController::class, 'responder'])->name('prestacao-servico.responder');
+
 Route::get('cidades/{sigla_estado}', [App\Http\Controllers\HelperController::class, 'obterCidadesPorEstadoParaSelect2'])->name('helper.cidadesSelect2');
 Route::get('popular-dados-teste', [App\Http\Controllers\HelperController::class, 'popularDadosTeste'])->middleware('guest');

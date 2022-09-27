@@ -21,7 +21,7 @@
       </ol>
     @endif
     @if (Session::has('error'))
-      <ol class="breadcrumb">
+      <ol class="breadcrumb mensagem-status">
         <li>
           <div class="alert alert-danger alert-dismissible alert-resizing">
             <i class="icon fa fa-ban"></i> {!! Session::get('error') !!}
@@ -88,10 +88,10 @@
                     <td>
                       <div class="btn-group">
                         <a href="{{ route('campanha.editar', $campanha->id) }}" class="btn btn-default btn-flat"><i
-                            class="fa fa-edit"></i></a>
+                            class="fa fa-edit" title="Editar"></i></a>
                         <button type="button" class="btn btn-default btn-flat button-excluir-campanha"
                           data-id="{{ $campanha->id }}" data-titulo="{{ $campanha->titulo }}" data-toggle="modal"
-                          data-target="#modal-exclusao-campanha" data-backdrop="static" data-keyboard="false"><i
+                          data-target="#modal-exclusao-campanha" data-backdrop="static" data-keyboard="false" title="Excluir"><i
                             class="fa fa-trash"></i></button>
                       </div>
                     </td>

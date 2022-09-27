@@ -95,11 +95,11 @@
           @if (Auth::user()->isONG())
             <li @if (Route::is('campanha.*')) class="active" @endif><a href="{{ route('campanha.index') }}"><i
                   class="fa fa-wrench"></i> <span>Campanhas</span></a></li>
-            <li><a href="#"><i class="fa fa-users"></i> <span>Aplicações</span></a></li>
+            <li @if (Route::is('aplicacoes.*')) class="active" @endif><a href="{{ route('aplicacoes.index') }}"><i class="fa fa-users"></i> <span>Aplicações Pendentes</span></a></li>
           @endif
           @if (Auth::user()->isVoluntario())
-            <li><a href="#"><i class="fa fa-search"></i> <span>Pesquisar</span></a></li>
-            <li><a href="#"><i class="fa fa-user"></i> <span>Minhas Aplicações</span></a></li>
+            <li @if (Route::is('pesquisa.*')) class="active" @endif><a href="{{ route('pesquisa.index') }}"><i class="fa fa-search"></i> <span>Pesquisar</span></a></li>
+            <li @if (Route::is('minhas-aplicacoes.*')) class="active" @endif><a href="{{ route('minhas-aplicacoes.index') }}"><i class="fa fa-user"></i> <span>Minhas Aplicações</span></a></li>
           @endif
         </ul>
         <!-- /.sidebar-menu -->

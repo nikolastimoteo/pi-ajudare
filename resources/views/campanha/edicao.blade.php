@@ -24,7 +24,7 @@
       </ol>
     @endif
     @if (Session::has('error'))
-      <ol class="breadcrumb">
+      <ol class="breadcrumb mensagem-status">
         <li>
           <div class="alert alert-danger alert-dismissible alert-resizing">
             <i class="icon fa fa-ban"></i> {!! Session::get('error') !!}
